@@ -16,10 +16,18 @@
         <button onclick="location.href='registro.html'">Iniciar sesion</button>
     </div>
     <label for="tipo">Tipo de Usuario</label>
+    <select id="tipo" name="tipo">
     <option value="">Seleccione...</option>
     <option value="cliente">Cliente</option>
     <option value="admin">Administrador</option>
     <option value="doctor">Doctor</option>
     <option value="secretario">Secretario</option>
+    </select>
+    <label for="correo">Correo</label>
+    <input type="email" id="correo" name="correo" placeholder="correo electronico">
+    <lable for="password">Contraseña</lable>
+    <input type="password" id="password" name="password" placeholder="Contraseña">
+    <button class="submit-bn">Iniciar</button>
+
 </body>
 </html>
