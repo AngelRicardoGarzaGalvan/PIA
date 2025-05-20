@@ -24,13 +24,13 @@ document.querySelector(".submit-btn").addEventListener("click", function () {
       location.href = "cliente/principal.html";
       break;
     case "doctor":
-      location.href = "doctor/panel.html"; // 🧠 cambia esto por la ruta real de tu panel doctor
+      location.href = "doctor/panel.html"; //  cambia esto por la ruta real de tu panel doctor
       break;
     case "admin":
-      location.href = "admin/admin_comentarios.html"; // ✅ esta es tu pantalla inicial de admin
+      location.href = "admin/admin_comentarios.html"; //  esta es tu pantalla inicial de admin
       break;
     case "secretario":
-      location.href = "secretario/panel.html"; // 🧠 cambia esto por la ruta real de secretario
+      location.href = "secretario/panel.html"; //  cambia esto por la ruta real de secretario
       break;
     default:
       alert("Rol no reconocido.");
