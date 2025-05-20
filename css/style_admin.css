@@ -1,0 +1,215 @@
+body {
+  background-color: #f2f2f2;
+}
+
+.admin-container {
+  max-width: 600px;
+  margin: 60px auto;
+  background-color: white;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.admin-container h2 {
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  justify-items: center;
+  margin-bottom: 15px;
+}
+
+.admin-grid button,
+.bottom-button button {
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 18px;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+  transition: 0.2s ease;
+}
+
+.admin-grid button:hover,
+.bottom-button button:hover {
+  background-color: #bbb;
+}
+
+.comentario-box {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #fdfdfd;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
+}
+
+.comentario-box h4 {
+  margin: 0 0 6px 0;
+}
+
+.comentario-box small {
+  color: #777;
+  font-size: 12px;
+}
+
+.comentario-box .estrellas {
+  color: #ffb400;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.comentario-box .acciones button {
+  margin-right: 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-borrar {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-editar {
+  background-color: #3498db;
+  color: white;
+}
+
+.nav-bar .active {
+  background-color: #ffffff;
+  font-weight: bold;
+}
+
+.rol-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  justify-content: center;
+}
+
+.rol-row input,
+.rol-row select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.rol-row input {
+  flex: 2;
+  min-width: 175px;
+}
+
+.rol-row select {
+  flex: 1;
+  min-width: 130px;
+}
+
+.rol-row .guardar-btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+  min-width: 90px;
+}
+
+.rol-row .guardar-btn:hover {
+  background-color: #2980b9;
+}
+
+.admin-horarios-container {
+  max-width: 900px;
+}
+
+.horario-calendario-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.horarios {
+  flex: 1;
+  min-width: 300px;
+}
+
+.horarios ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.horarios li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  background: #eee;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.btn-eliminar {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.nuevo-horario input {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 60%;
+  margin-right: 10px;
+}
+
+.nuevo-horario button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.calendario {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+#calendario-dias {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  margin-top: 10px;
+}
+
+#calendario-dias .dia {
+  background-color: #eee;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#calendario-dias .dia.activo {
+  background-color: #33b5ff;
+  color: white;
+  font-weight: bold;
+}
+
