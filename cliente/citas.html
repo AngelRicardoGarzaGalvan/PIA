@@ -28,7 +28,26 @@
                 <input type="text" id="nombre" required>
                 <label for="edad">Edad</label>
                 <input type="text" id="edad" min="0" max="120" required>
+                <label form="servicio">Servicio Requerido</label>
+                <select id="servicio" required>
+                    <option value="">Selecciona...</option>
+                    <option value="limpieza">Limpieza y prevención</option>
+                    <option value="odontologia">Odontología general</option>
+                    <option value="ortodoncia">Ortodoncia</option>
+                    <option value="estetica">Estética dental</option>
+                    <option value="implantes">Implantes y prótesis</option>
+                    <option value="endodoncia">Endodoncia</option>
+                </select>
+                <label for="fecha-required">Fecha requerida</label>
+                <input type="text" id="fecha-required" readonly required placeholder="Selecciona un dia en el calendario">
+                <label for="hora-seleccionada">Hora solicitada</label>
+                <input type="text" id="hora-seleccionada" readonly required placeholder="Selecciona una hora">
+                <label for="motivo">Motivo de consulta</label>
+                <input type="text" id="motivo">
+                <button type="submit" class="submit-btn" style="margin-top: 20px;">Agendar cita</button>
             </form>
+
+            
         </div>
     </div>
 </body>
