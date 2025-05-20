@@ -4,20 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Asignación de Doctores</title>
+  <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="../css/style_secretario.css" />
 </head>
 <body>
   <div class="top-bar">
     <h1>Consultorio Dental</h1>
     <p>Sonrisas saludables, cuidado profesional.</p>
-    <div class="nav-bar">
-      <button class="active">Asignación de doctores</button>
-      <button>Gestionar Citas</button>
-      <button>Citas de hoy</button>
-      <button>Asistencia</button>
-      <button>Pagos</button>
-    </div>
   </div>
+    <div class="nav-bar">
+      <button onclick="location.href='asignacion_doctores.html'" id="btn-asignacion">Asignación de doctores</button>
+      <button onclick="location.href='gestionar_citas.html'" id="btn-gestionar">Gestionar Citas</button>
+      <button onclick="location.href='citas_hoy.html'" id="btn-hoy">Citas de hoy</button>
+      <button onclick="location.href='asistencia.html'" id="btn-asistencia">Asistencia</button>
+      <button onclick="location.href='pagos.html'" id="btn-pagos">Pagos</button>
+      <div class="user-icon"></div>
+    </div>
+  
 
   <div class="contenido-secretario">
     <p class="horario-atencion">Horario de atención de 8 am a 6 pm<br>Lunes a Viernes</p>

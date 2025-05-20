@@ -1,42 +1,9 @@
 body {
   margin: 0;
   font-family: sans-serif;
-  background-color: #f2f2f2;
+  background-color: rgb(237, 246, 255);
 }
-.top-bar {
-  background-color: #405b73;
-  color: white;
-  padding: 10px;
-  text-align: center;
-}
-.top-bar h1 { margin: 0; font-size: 24px; }
-.top-bar p { margin: 2px 0 0; font-size: 14px; }
 
-.nav-bar {
-  background-color: #33b5ff;
-  padding: 8px;
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-}
-.nav-bar button {
-  background-color: #ddd;
-  border: none;
-  border-radius: 6px;
-  padding: 8px 12px;
-  cursor: pointer;
-  transition: background-color .2s ease;
-}
-.nav-bar button:hover { background-color: #ccc; }
-.nav-bar .active {
-  background-color: white;
-  font-weight: bold;
-}
-.nav-bar .logout {
-  margin-left: auto;
-  background: transparent;
-  font-size: 18px;
-}
 
 .doctor-container {
   max-width: 900px;

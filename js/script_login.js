@@ -18,7 +18,6 @@ document.querySelector(".submit-btn").addEventListener("click", function () {
 
   localStorage.setItem("usuario_actual", JSON.stringify(usuario));
 
-  // ✅ Redireccionar según rol
   switch (usuario.rol) {
     case "cliente":
       location.href = "cliente/principal.html";
@@ -30,7 +29,7 @@ document.querySelector(".submit-btn").addEventListener("click", function () {
       location.href = "admin/admin_comentarios.html"; //  esta es tu pantalla inicial de admin
       break;
     case "secretario":
-      location.href = "secretario/panel.html"; //  cambia esto por la ruta real de secretario
+      location.href = "secretario/Secretario.html"; //  cambia esto por la ruta real de secretario
       break;
     default:
       alert("Rol no reconocido.");
