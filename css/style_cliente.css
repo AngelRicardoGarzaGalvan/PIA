@@ -17,4 +17,15 @@
 }
 .col-img{
     padding: 100px;
+    
+}
+.col-img img{
+    border-radius: 10px;
+}
+.col-costos{
+    text-align: left;
+    padding-left: 50px;
+}
+.cos{
+    padding-left: 10px;
 }
