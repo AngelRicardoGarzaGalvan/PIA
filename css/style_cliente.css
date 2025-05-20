@@ -48,3 +48,66 @@
     border: 1px solid #ccc;
     resize: none;
 }
+#calendario{
+    margin-top: 10px;
+    font-family: Arial, sans-serif;
+}
+#calendario table{
+    width: 100%;
+    border-collapse: collapse;
+}
+#calendario caption{
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+#calendario th, #calendario td {
+    padding: 8px;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#calendario td:hover {
+    background-color: #e0e0e0;
+}
+
+#calendario .activo {
+    background-color: #33b5ff;
+    color: white;
+    font-weight: bold;
+}
+
+#calendario .ocupado {
+    background-color: #ff6b6b;
+    color: white;
+    font-weight: bold;
+}
+
+.hora-btn {
+    margin: 6px 5px;
+    padding: 8px 14px;
+    border: 2px solid #33b5ff;
+    background-color: white;
+    color: #33b5ff;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.hora-btn:hover:not(.ocupado):not(.seleccionado) {
+    background-color: #e6f4ff;
+}
+.hora-btn.seleccionado {
+    background-color: #33b5ff;
+    color: white;
+    border-color: #33b5ff;
+}
+.hora-btn.ocupado {
+    background-color: #ccc;
+    color: #666;
+    border: none;
+    cursor: not-allowed;
+}
