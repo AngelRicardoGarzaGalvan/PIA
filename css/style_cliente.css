@@ -29,3 +29,22 @@
 .cos{
     padding-left: 10px;
 }
+.contact-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 30px;
+    margin-top: 20px;
+}
+.contact-grid p{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.contact-box textarea{
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    resize: none;
+}
