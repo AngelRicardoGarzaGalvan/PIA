@@ -66,3 +66,18 @@ body{
 .submit-btn:hover{
     background-color: rgb(131, 172, 233);
 }
+
+textarea{
+    width: 100%;
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    resize: none;
+}
+input[type="text"]{
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
