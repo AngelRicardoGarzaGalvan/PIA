@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Administrador | Consultorio Dental</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/style_admin.css" />
+</head>
+<body>
+
+  <div class="top-bar">
+    <h1>Consultorio Dental</h1>
+    <p>Sonrisas saludables, cuidado profesional.</p>
+  </div>
+
+  <div class="nav-bar">
+    <button onclick="cerrarSesion()">Cerrar sesión</button>
+  </div>
+
+  <div class="admin-container">
+    <h2>Tipo de Administrador</h2>
+
+    <div class="admin-grid">
+      <button onclick="location.href='admin_comentarios.html'">Administrador de Comentarios</button>
+      <button onclick="location.href='admin_horarios.html'">Administrador de Horarios y Días</button>
+      <button onclick="location.href='admin_roles.html'">Administrador de Asignamiento de rol</button>
+      <button onclick="location.href='admin_estadisticas.html'">Estadísticas</button>
+    </div>
+
+    <div class="bottom-button">
+      <button onclick="location.href='admin_servicios.html'">Administrador de Servicios</button>
+    </div>
+  </div>
+
+  <script src="../js/script_admin.js"></script>
+</body>
+</html>

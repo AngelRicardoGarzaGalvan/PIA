@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Administrador | Horarios y Días</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/style_admin.css" />
+</head>
+<body>
+
+  <div class="top-bar">
+    <h1>Consultorio Dental</h1>
+    <p>Modo Administrador: Horarios y Días</p>
+  </div>
+
+  <div class="nav-bar">
+    <button onclick="location.href='admin_comentarios.html'">Administrador de Comentarios</button>
+    <button class="active" onclick="location.href='admin_horarios.html'">Horarios y Días</button>
+    <button onclick="location.href='admin_roles.html'">Asignamiento de Rol</button>
+    <button onclick="location.href='admin_estadisticas.html'">Estadísticas</button>
+    <button onclick="location.href='admin_servicios.html'">Servicios</button>
+    <button onclick="cerrarSesion()">Cerrar sesión</button>
+  </div>
+
+  <div class="admin-container admin-horarios-container">
+    <h2>Gestión de Horarios y Días</h2>
+
+    <div class="horario-calendario-wrapper">
+      <!-- Columna de horarios generales -->
+      <div class="horarios">
+        <ul id="lista-horarios"></ul>
+        <div class="nuevo-horario">
+          <input type="text" id="input-nuevo-horario" placeholder="Ej: 6:00am a 8:00am" />
+          <button onclick="agregarHorario()">Añadir</button>
+        </div>
+      </div>
+
+      <!-- Calendario -->
+      <div class="calendario">
+        <h3>Calendario</h3>
+        <div id="calendario-dias"></div>
+        <button onclick="guardarCambios()">Guardar Cambios</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Panel lateral para editar horarios por día -->
+  <div id="editor-dia" class="panel-editor hidden">
+    <h3>Editar horarios para el <span id="fecha-editando"></span></h3>
+    <div id="horarios-checks"></div>
+    <button onclick="guardarHorariosDelDia()">Guardar horarios</button>
+  </div>
+
+  <script src="../js/script_admin.js"></script>
+  <script src="../js/script_admin_horarios.js"></script>
+</body>
+</html>

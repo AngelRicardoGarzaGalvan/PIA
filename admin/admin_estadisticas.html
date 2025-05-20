@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administrador | Estadísticas</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style_admin.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="top-bar">
+    <h1>Consultorio Dental</h1>
+    <p>Modo Estadísticas</p>
+  </div>
+
+  <div class="nav-bar">
+    <button onclick="location.href='admin_comentarios.html'">Administrador de Comentarios</button>
+    <button onclick="location.href='admin_horarios.html'">Horarios y Días</button>
+    <button onclick="location.href='admin_roles.html'">Asignamiento de Rol</button>
+    <button class="active" onclick="location.href='admin_estadisticas.html'">Estadísticas</button>
+    <button onclick="location.href='admin_servicios.html'">Servicios</button>
+    <button onclick="cerrarSesion()">Cerrar sesión</button>
+  </div>
+
+  <div class="admin-container">
+    <label for="mesSelect">Filtrar por:</label>
+    <select id="mesSelect" onchange="generarEstadisticas()"></select>
+
+    <div class="chart-wrapper" style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin-top:30px;">
+      <canvas id="graficoPastel" width="350" height="350"></canvas>
+      <canvas id="graficoBarras" width="500" height="350"></canvas>
+    </div>
+  </div>
+
+  <script src="../js/script_admin.js"></script>
+  <script src="../js/script_admin_estadisticas.js"></script>
+</body>
+</html>
