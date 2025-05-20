@@ -4,32 +4,7 @@ body {
   font-family: sans-serif;
 }
 
-.top-bar {
-  background-color: #375268;
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
 
-.nav-bar {
-  background-color: #33b5ff;
-  padding: 10px;
-  text-align: center;
-}
-
-.nav-bar button {
-  background-color: #e0e0e0;
-  border: none;
-  border-radius: 5px;
-  padding: 8px 16px;
-  margin: 5px;
-  cursor: pointer;
-}
-
-.nav-bar .active {
-  background-color: #ffffff;
-  font-weight: bold;
-}
 
 .main-container {
   display: flex;
