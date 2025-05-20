@@ -1,0 +1,178 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #f2f2f2;
+}
+.top-bar {
+  background-color: #405b73;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+.top-bar h1 { margin: 0; font-size: 24px; }
+.top-bar p { margin: 2px 0 0; font-size: 14px; }
+
+.nav-bar {
+  background-color: #33b5ff;
+  padding: 8px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+.nav-bar button {
+  background-color: #ddd;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color .2s ease;
+}
+.nav-bar button:hover { background-color: #ccc; }
+.nav-bar .active {
+  background-color: white;
+  font-weight: bold;
+}
+.nav-bar .logout {
+  margin-left: auto;
+  background: transparent;
+  font-size: 18px;
+}
+
+.doctor-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+.doctor-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Nuevo expediente */
+.new-expediente {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.new-expediente input {
+  padding: 8px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+}
+.new-expediente button {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: background-color .2s;
+}
+.new-expediente button:hover { background-color: #219150; }
+
+/* Búsqueda */
+.busqueda {
+  text-align: left;
+  margin-bottom: 20px;
+}
+.busqueda label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+.busqueda input {
+  width: 100%;
+  max-width: 300px;
+  padding: 8px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+}
+
+/* Tarjeta expediente */
+.expediente-card {
+  display: grid;
+  grid-template-columns: 2fr 2fr auto;
+  gap: 12px;
+  align-items: start;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+.expediente-card .info {
+  background: #f9f9f9;
+  border: 1px solid #bbb;
+  border-radius: 12px;
+  padding: 12px;
+  overflow-wrap: anywhere;
+}
+.expediente-card .acciones {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Botones de acción */
+.expediente-card button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+  transition: background-color .2s;
+}
+.btn-completo {
+  background-color: #6455ea;
+}
+.btn-completo:hover {
+  background-color: #2756ae;
+}
+.btn-modificar {
+  background-color: #3498db;
+}
+.btn-modificar:hover {
+  background-color: #2980b9;
+}
+/* NUEVO: botón eliminar */
+.btn-eliminar {
+  background-color: #006eff;
+}
+.btn-eliminar:hover {
+  background-color: #c0392b;
+}
+
+/* Formulario para añadir campo */
+.add-form {
+  grid-column: 1 / span 2;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 12px;
+}
+.add-form select,
+.add-form input {
+  padding: 6px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+}
+.add-form select {
+  min-width: 140px;
+}
+.add-form input {
+  flex: 1;
+}
+.add-form button {
+  background-color: #0930a6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.add-form button:hover {
+  background-color: #061a89;
+}
+

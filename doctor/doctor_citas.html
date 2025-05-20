@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Consulta de Citas</title>
+  <link rel="stylesheet" href="../css/styles_doctor.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="top-bar">
+    <h1>Consultorio Dental</h1>
+    <p>Sonrisas saludables, cuidado profesional.</p>
+  </div>
+
+  <div class="nav-bar">
+    <button class="active">Consulta de citas programadas</button>
+    <button onclick="location.href='expedientes.html'">Expedientes</button>
+    <button onclick="location.href='recetas.html'">Recetas Médicas</button>
+    <button onclick="cerrarSesion()">Cerrar sesión</button>
+  </div>
+
+  <div class="main-container">
+    <div class="filtros">
+      <h3>Búsqueda Específica</h3>
+      <input type="text" id="busqueda" placeholder="Introduzca su búsqueda" oninput="filtrarCitas()"/>
+
+      <div class="filtro-grupo">
+        <strong>Fecha:</strong><br>
+        <label><input type="checkbox" class="filtro-fecha" value="hoy" onchange="filtrarCitas()"> Hoy</label><br>
+        <label><input type="checkbox" class="filtro-fecha" value="semana" onchange="filtrarCitas()"> Esta Semana</label><br>
+        <label><input type="checkbox" class="filtro-fecha" value="mes" onchange="filtrarCitas()"> Este mes</label>
+      </div>
+
+      <div class="filtro-grupo">
+        <strong>Hora:</strong><br>
+        <label><input type="checkbox" class="filtro-hora" value="8" onchange="filtrarCitas()"> 8 am - 10 am</label><br>
+        <label><input type="checkbox" class="filtro-hora" value="10" onchange="filtrarCitas()"> 10 am - 12 pm</label><br>
+        <label><input type="checkbox" class="filtro-hora" value="12" onchange="filtrarCitas()"> 12 pm - 2 pm</label><br>
+        <label><input type="checkbox" class="filtro-hora" value="14" onchange="filtrarCitas()"> 2 pm - 4 pm</label><br>
+        <label><input type="checkbox" class="filtro-hora" value="16" onchange="filtrarCitas()"> 4 pm - 6 pm</label>
+      </div>
+    </div>
+
+    <div class="contenedor-citas" id="contenedor-citas">
+      <!-- Aquí se insertarán las tarjetas -->
+    </div>
+  </div>
+
+  <script src="../js/doctor_citas.js"></script>
+</body>
+</html>

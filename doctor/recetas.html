@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Modo Doctor: Recetas Médicas</title>
+  <link rel="stylesheet" href="../css/styles_doctor.css" />
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <div class="top-bar">
+    <h1>Consultorio Dental</h1>
+    <p>Sonrisas saludables, cuidado profesional.</p>
+  </div>
+
+  <!-- Barra de navegación doctor -->
+  <div class="nav-bar">
+    <button onclick="location.href='doctor_citas.html'">Consulta de citas programadas</button>
+    <button onclick="location.href='expedientes.html'">Expedientes</button>
+    <button class="active">Recetas Médicas</button>
+    <button class="profile-btn">👤</button>
+  </div>
+
+  <!-- Contenedor principal -->
+  <div class="doctor-container">
+    <h2>Modo Doctor: Recetas Médicas</h2>
+
+    <!-- Nota del paciente -->
+    <p><em>Nota médica de <span id="paciente-nombre">[Nombre del Paciente]</span></em></p>
+
+    <!-- Zona de indicaciones -->
+    <label for="indicaciones">Indicaciones del Doctor:</label>
+    <textarea id="indicaciones" placeholder="Medicamentos, indicaciones, etc"></textarea>
+
+    <!-- Botón de impresión -->
+    <button id="btn-imprimir">Imprimir Receta</button>
+  </div>
+
+  <script>
+    document.getElementById('btn-imprimir').addEventListener('click', () => {
+      window.print();
+    });
+
+    // Opcional: cargar el nombre del paciente desde localStorage
+    const usuario = JSON.parse(localStorage.getItem('usuario_actual'));
+    if (usuario && usuario.pacienteSeleccionado) {
+      document.getElementById('paciente-nombre').textContent = usuario.pacienteSeleccionado;
+    }
+  </script>
+</body>
+</html>

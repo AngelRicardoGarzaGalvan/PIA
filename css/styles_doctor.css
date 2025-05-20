@@ -1,0 +1,166 @@
+body {
+  margin: 0;
+  background-color: #f2f2f2;
+  font-family: sans-serif;
+}
+
+.top-bar {
+  background-color: #375268;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.nav-bar {
+  background-color: #33b5ff;
+  padding: 10px;
+  text-align: center;
+}
+
+.nav-bar button {
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.nav-bar .active {
+  background-color: #ffffff;
+  font-weight: bold;
+}
+
+.main-container {
+  display: flex;
+  padding: 30px;
+  gap: 30px;
+}
+
+.filtros {
+  width: 250px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+}
+
+.filtros h3 {
+  margin-top: 0;
+}
+
+.filtros input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.filtro-grupo {
+  margin-top: 15px;
+}
+
+.contenedor-citas {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card-cita {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.07);
+  font-family: sans-serif;
+}
+
+.card-cita p {
+  margin: 5px 0;
+}
+.main-container {
+  display: flex;
+  padding: 30px;
+  gap: 30px;
+}
+
+.filtros {
+  width: 250px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+}
+
+.filtros h3 {
+  margin-top: 0;
+}
+
+.filtros input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.filtro-grupo {
+  margin-top: 15px;
+}
+
+.contenedor-citas {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card-cita {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.07);
+  font-family: sans-serif;
+}
+
+.card-cita p {
+  margin: 5px 0;
+}
+
+.doctor-container {
+  max-width: 500px;
+  margin: 50px auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.doctor-container button {
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 30px;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.doctor-container button:hover {
+  background-color: #c7c7c7;
+}
+.doctor-container textarea {
+  width: 100%;            /* ocupa todo el ancho del contenedor */
+  height: 200px;          /* altura generosa */
+  padding: 12px;          /* espacio interior */
+  font-size: 16px;        /* texto más legible */
+  border: 1px solid #ccc; /* borde suave */
+  border-radius: 8px;     /* esquinas redondeadas */
+  resize: vertical;       /* solo permitir cambiar altura */
+  box-sizing: border-box; /* para que padding no desborde */
+  margin: 10px 0 20px;    /* separaciones arriba y abajo */
+}
+

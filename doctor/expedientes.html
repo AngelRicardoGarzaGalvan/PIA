@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Consultorio Dental | Expedientes</title>
+  <link rel="stylesheet" href="../css/style_doctor_expediente.css" />
+</head>
+<body>
+
+  <!-- Top bar -->
+  <div class="top-bar">
+    <h1>Consultorio Dental</h1>
+    <p>Sonrisas saludables, cuidado profesional.</p>
+  </div>
+
+  <!-- Navegación Doctor -->
+  <div class="nav-bar">
+    <button onclick="location.href='doctor_citas.html'">Consulta de citas programadas</button>
+    <button class="active" onclick="location.href='expedientes.html'">Expedientes</button>
+    <button onclick="location.href='recetas.html'">Recetas Médicas</button>
+    <button class="logout" title="Cerrar sesión">👤</button>
+  </div>
+
+  <div class="doctor-container">
+    <h2>Modo Doctor: Expediente de Pacientes</h2>
+
+    <!-- Formulario para nuevo expediente -->
+    <div class="new-expediente">
+      <input type="text" id="new-nombre" placeholder="Nombre del paciente" />
+      <input type="text" id="new-id" placeholder="ID del expediente" />
+      <button id="btn-add-exp">Crear Expediente</button>
+    </div>
+
+    <!-- Búsqueda -->
+    <div class="busqueda">
+      <label for="busqueda-input">Búsqueda específica</label>
+      <input type="text" id="busqueda-input" placeholder="Nombre o ID..." />
+    </div>
+
+    <!-- Contenedor de expedientes -->
+    <div id="expedientes-container"></div>
+  </div>
+
+  <!-- Tu JS principal -->
+  <script src="../js/script_expedientes.js"></script>
+
+</body>
+</html>
