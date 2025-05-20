@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestionar Citas</title>
+  <link rel="stylesheet" href="../css/style_secretario.css">
+</head>
+<body>
+
+  <div class="top-bar">
+    <h1>Consultorio Dental</h1>
+    <p>Sonrisas saludables, cuidado profesional.</p>
+    <div class="nav-bar">
+        <button onclick="location.href='asignacion_doctores.html'" id="btn-asignacion">Asignación de doctores</button>
+        <button onclick="location.href='gestionar_citas.html'" id="btn-gestionar">Gestionar Citas</button>
+        <button onclick="location.href='citas_hoy.html'" id="btn-hoy">Citas de hoy</button>
+        <button onclick="location.href='asistencia.html'" id="btn-asistencia">Asistencia</button>
+        <button onclick="location.href='pagos.html'" id="btn-pagos">Pagos</button>
+        <div class="user-icon"></div>
+      </div>
+      
+  </div>
+
+  <div class="contenedor-gestion-citas">
+    <div class="filtros">
+      <h3>Filtros de Búsqueda</h3>
+      <ul>
+        <li><input type="checkbox" checked> Revisión periódica</li>
+        <li><input type="checkbox" checked> Limpieza profesional</li>
+        <li><input type="checkbox" checked> Aplicación de Flúor</li>
+        <li><input type="checkbox" checked> Tratamiento para Caries</li>
+        <li><input type="checkbox" checked> Remover Caries</li>
+        <li><input type="checkbox" checked> Extracciones</li>
+        <li><input type="checkbox" checked> Solución para aliviar el dolor</li>
+        <li><input type="checkbox" checked> Brackets tradicionales</li>
+        <li><input type="checkbox" checked> Alineadores Invisibles</li>
+        <li><input type="checkbox" checked> Blanqueamiento</li>
+        <li><input type="checkbox" checked> Carillas Dentales</li>
+        <li><input type="checkbox" checked> Remodelación Dental</li>
+        <li><input type="checkbox" checked> Implantes y Prótesis</li>
+        <li><input type="checkbox" checked> Endodoncia</li>
+      </ul>
+    </div>
+
+    <div class="cita">
+      <h2>Gestionar Citas</h2>
+      <p>Cita #XX</p>
+
+      <label>Nombre y edad del paciente</label>
+      <input type="text" value="Oscar Eduardo Barajas" readonly>
+
+      <label>Servicio de Interés</label>
+      <input type="text" value="Consulta">
+
+      <label>Fecha Solicitada:</label>
+      <input type="date" value="2024-08-23">
+
+      <label>Hora Solicitada:</label>
+      <input type="time" value="09:00">
+
+      <label>Número de Celular:</label>
+      <input type="text" value="555-444-333">
+
+      <label>Motivo</label>
+      <input type="text" value="Limpieza Dental">
+
+      <label>Aceptada</label>
+      <input type="checkbox">
+
+      <div class="acciones">
+        <button>Modificar Datos</button>
+        <button class="eliminar">Eliminar Cita</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/gestionar_citas.js"></script>
+</body>
+</html>

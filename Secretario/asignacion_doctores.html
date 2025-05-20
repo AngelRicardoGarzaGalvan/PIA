@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Asignación de Doctores</title>
+  <link rel="stylesheet" href="../css/style_secretario.css" />
+</head>
+<body>
+  <div class="top-bar">
+    <h1>Consultorio Dental</h1>
+    <p>Sonrisas saludables, cuidado profesional.</p>
+    <div class="nav-bar">
+      <button class="active">Asignación de doctores</button>
+      <button>Gestionar Citas</button>
+      <button>Citas de hoy</button>
+      <button>Asistencia</button>
+      <button>Pagos</button>
+    </div>
+  </div>
+
+  <div class="contenido-secretario">
+    <p class="horario-atencion">Horario de atención de 8 am a 6 pm<br>Lunes a Viernes</p>
+    <h2>Modo Secretario: Asignar doctores</h2>
+
+    <div class="contenedor-asignacion">
+      <div class="calendario">
+        <div class="calendario-header">
+          <select id="mes-selector">
+            <option value="0">Enero</option>
+            <option value="1">Febrero</option>
+            <option value="2">Marzo</option>
+            <option value="3">Abril</option>
+            <option value="4">Mayo</option>
+            <option value="5">Junio</option>
+            <option value="6">Julio</option>
+            <option value="7">Agosto</option>
+            <option value="8">Septiembre</option>
+            <option value="9" selected>Octubre</option>
+            <option value="10">Noviembre</option>
+            <option value="11">Diciembre</option>
+          </select>
+        </div>
+        <table id="tabla-calendario"></table>
+      </div>
+
+      <div class="horas-disponibles">
+        <h3>Horas Disponibles</h3>
+
+        <div class="fila-hora">
+          <span>8 am - 10 am</span>
+          <select>
+            <option>Dr. Alejandro</option>
+            <option>Dra. Yolanda</option>
+            <option>Dr. Ángel</option>
+          </select>
+          <button>Añadir</button>
+        </div>
+
+        <div class="fila-hora">
+          <span>10 am - 12 pm</span>
+          <select>
+            <option>Dr. Alejandro</option>
+            <option>Dra. Yolanda</option>
+            <option>Dr. Ángel</option>
+          </select>
+          <button>Añadir</button>
+        </div>
+
+        <div class="fila-hora">
+          <span>12 pm - 2 pm</span>
+          <select>
+            <option>Dr. Alejandro</option>
+            <option>Dra. Yolanda</option>
+            <option>Dr. Ángel</option>
+          </select>
+          <button>Añadir</button>
+        </div>
+
+        <div class="fila-hora">
+          <span>2 pm - 4 pm</span>
+          <select>
+            <option>Dr. Alejandro</option>
+            <option>Dra. Yolanda</option>
+            <option>Dr. Ángel</option>
+          </select>
+          <button>Añadir</button>
+        </div>
+
+        <div class="fila-hora">
+          <span>4 pm - 6 pm</span>
+          <select>
+            <option>Dr. Alejandro</option>
+            <option>Dra. Yolanda</option>
+            <option>Dr. Ángel</option>
+          </select>
+          <button>Añadir</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/asignacion_doctores.js"></script>
+</body>
+</html>

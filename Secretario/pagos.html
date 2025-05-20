@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pagos</title>
+  <link rel="stylesheet" href="../css/style_secretario.css" />
+</head>
+<body>
+
+  <div class="top-bar">
+    <h1>Consultorio Dental</h1>
+    <p>Sonrisas saludables, cuidado profesional.</p>
+   
+    <div class="nav-bar">
+        <button onclick="location.href='asignacion_doctores.html'" id="btn-asignacion">Asignación de doctores</button>
+        <button onclick="location.href='gestionar_citas.html'" id="btn-gestionar">Gestionar Citas</button>
+        <button onclick="location.href='citas_hoy.html'" id="btn-hoy">Citas de hoy</button>
+        <button onclick="location.href='asistencia.html'" id="btn-asistencia">Asistencia</button>
+        <button onclick="location.href='pagos.html'" id="btn-pagos">Pagos</button>
+        <div class="user-icon"></div>
+      </div>
+      
+  
+
+  <div class="contenedor-citas-hoy">
+    <h2>Modo Secretario: Pagos</h2>
+
+    <div class="lista-citas">
+      <!-- Citas de ejemplo -->
+      <div class="cita-hoy">
+        <span>Cita 1: Nombre y Hora</span>
+        <span class="pagado">✔ Pagado</span>
+        <label class="switch">
+          <input type="checkbox" checked />
+          <span class="slider"></span>
+        </label>
+        <span class="metodo">Efectivo</span>
+      </div>
+
+      <div class="cita-hoy">
+        <span>Cita 2: Nombre y Hora</span>
+        <span class="pagado">✔ Pagado</span>
+        <label class="switch">
+          <input type="checkbox" />
+          <span class="slider"></span>
+        </label>
+        <span class="metodo">Terminal</span>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="../js/pagos.js"></script>
+</body>
+</html>
