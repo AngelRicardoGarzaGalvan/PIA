@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Consultorio Dental | Crear Servicio</title>
+  <link rel="stylesheet" href="../css/style_admin_services.css" />
+</head>
+<body>
+
+  <!-- Top bar -->
+  <div class="top-bar">
+    <h1>Consultorio Dental</h1>
+    <p>Sonrisas saludables, cuidado profesional.</p>
+  </div>
+
+  <!-- Navegación Admin -->
+  <div class="nav-bar">
+    <button onclick="location.href='admin_comentarios.html'">Comentarios</button>
+    <button onclick="location.href='admin_horarios.html'">Horarios y Días</button>
+    <button onclick="location.href='admin_roles.html'">Asignar Roles</button>
+    <button onclick="location.href='admin_estadisticas.html'">Estadísticas</button>
+    <button onclick="location.href='admin_citas.html'">Citas</button>
+    <button onclick="location.href='admin_services.html'">Servicios</button>
+    <button class="logout" title="Cerrar sesión">👤</button>
+  </div>
+
+  <div class="container">
+    <h2>Administrador/Creación de Servicios</h2>
+    <div class="services-box">
+      <!-- Panel izquierdo: indicador de modo crear -->
+      <div class="left-panel">
+        <button class="btn-mode" disabled>Añadir un servicio:</button>
+      </div>
+      <!-- Panel derecho: formulario -->
+      <div class="details-panel">
+        <div class="field-box">
+          <label>Nombre</label>
+          <input type="text" id="input-name" placeholder="Nombre del servicio" />
+          <button class="btn-edit" data-field="nombre">Editar</button>
+        </div>
+        <div class="field-box">
+          <label>Descripción:</label>
+          <textarea id="textarea-desc" rows="4" placeholder="Descripción del servicio"></textarea>
+          <button class="btn-edit" data-field="descripcion">Editar</button>
+        </div>
+        <div class="field-box">
+          <label>Precio:</label>
+          <input type="text" id="input-price" placeholder="Precio (solo número)" />
+          <button class="btn-edit" data-field="precio">Editar</button>
+        </div>
+        <div class="actions">
+          <button id="btn-save" class="btn-save">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/script_admin_services_create.js"></script>
+</body>
+</html>
