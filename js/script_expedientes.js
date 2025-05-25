@@ -9,12 +9,12 @@ const BTN_ADD       = document.getElementById("btn-add-exp");
 
 // Campos editables
 const CAMPOS = [
-  { value: "edad",    label: "Edad" },
-  { value: "peso",    label: "Peso" },
-  { value: "alergias",label: "Alergias" },
-  { value: "ritmo",   label: "Ritmo Cardíaco" },
-  { value: "presion", label: "Presión Arterial" },
-  { value: "sangre",  label: "Tipo de Sangre" },
+  { value: "edad",     label: "Edad" },
+  { value: "peso",     label: "Peso" },
+  { value: "alergias", label: "Alergias" },
+  { value: "ritmo",    label: "Ritmo Cardíaco" },
+  { value: "presion",  label: "Presión Arterial" },
+  { value: "sangre",   label: "Tipo de Sangre" },
 ];
 
 // Inicializa array en localStorage si no existe
@@ -32,7 +32,7 @@ function renderExpedientes() {
   EXP_CONTAINER.innerHTML = "";
 
   all
-    .filter(e => 
+    .filter(e =>
       e.nombre.toLowerCase().includes(filtro) ||
       e.id.toLowerCase().includes(filtro)
     )
@@ -74,9 +74,11 @@ function crearCard(exp) {
   // 1) Expediente completo
   const btnCompleto = document.createElement("button");
   btnCompleto.className = "btn-completo";
+  btnCompleto.textContent = "Expediente completo";
   btnCompleto.addEventListener("click", () => {
-    // Guarda el expediente actual y redirige
+    // Guarda el expediente actual y redirige a la vista completa
     localStorage.setItem("expediente_actual", JSON.stringify(exp));
+    window.location.href = `expediente_completo.html?id=${exp.id}`;
   });
 
   // 2) Modificar diagnóstico

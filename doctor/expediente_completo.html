@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Consultorio Dental | Expediente Completo</title>
+  <!-- tu CSS global -->
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../css/styles_doctor.css" />
+</head>
+<body>
+  <!-- Top bar -->
+  <div class="top-bar">
+    <h1>Consultorio Dental</h1>
+    <p>Expediente Completo</p>
+  </div>
+
+  <!-- Nav bar -->
+  <div class="nav-bar">
+    <button onclick="location.href='expedientes.html'">
+      ← Volver a Expedientes
+    </button>
+  </div>
+
+  <!-- Contenedor principal -->
+  <div class="doctor-container">
+    <h2>Expediente Completo</h2>
+    <!-- Aquí inyectaremos todos los datos -->
+    <div id="detalle-expediente"></div>
+  </div>
+
+  <!-- Script específico -->
+  <script src="../js/script_expediente_completo.js"></script>
+</body>
+</html>
