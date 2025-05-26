@@ -19,7 +19,8 @@
 
     <div class="login-box">
         <h2>Iniciar sesión</h2>
-
+        
+        <form action="php/login.php" method="POST">
         <label for="tipo">Tipo de Usuario</label>
         <select id="tipo" name="tipo" required>
             <option value="">Seleccione...</option>
@@ -36,9 +37,7 @@
         <input type="password" id="password" name="password" placeholder="Contraseña" required>
 
         <button type="submit" class="submit-btn">Iniciar</button>
+    </form>
     </div>
-
-    <script src="js/session.js"></script>
-    <script src="js/script_login.js"></script>
 </body>
 </html>
