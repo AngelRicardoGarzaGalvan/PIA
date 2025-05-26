@@ -17,21 +17,20 @@
     </div>
     <div class="login-box">
         <h2>Registro</h2>
+        <form action="php/usuarios.php" method="POST">
         <label for="nombre">Nombre completo</label>
-        <input type="text" id="nombre" name="telefono" placeholder="Tu nombre completo"> 
+        <input type="text" name="nombre" placeholder="Nombre completo" required>
         <label for="telefono">Telefono</label>
         <input type="tel" id="telefono" name="telefono" placeholder="Ej. 8123785445">
         <label for="correo">Correo electronico</label>
-        <input type="email" id="correo" name="correo" placeholder="ejemplo@gmail.com">
+        <input type="email" name="correo" placeholder="example@gmail.com" required>
         <label for="password">Contraseña</label>
-        <input type="password" id="password" name="password" placeholder="Contraseña">
-        <label for="confirmar">Contraseña</label>
+        <input type="password" name="contrasena" placeholder="contraseña" required>
+        <label for="confirmar">Confirmar cxontraseña</label>
         <input type="password" id="confirmar" name="confirmar" placeholder="confirmar la Contraseña">
-        <button class="submit-btn">Registrate</button>
-
+        <button type="submit" class="submit-btn">Registrate</button>
+    </form>
     </div>
-
-    <script src="js/session.js"></script>
-    <script src="js/script_registro.js"></script>
+    
 </body>
 </html>
