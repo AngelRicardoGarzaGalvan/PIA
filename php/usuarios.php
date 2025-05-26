@@ -1,38 +1,30 @@
 <?php
-header('Content-Type: application/json');
+require_once 'conexion.php';
 
-$host = "localhost";
-$usuario = "root"; // tu usuario de MySQL
-$password = ""; // tu contraseña (vacía por defecto en XAMPP)
-$bd = "db_consultoriodental"; // nombre de tu base de datos
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nombre = $_POST['nombre'];
+    $telefono = $_POST['telefono'];
+    $correo = $_POST['correo'];
+    $contrasena = $_POST['contrasena'];
+    
 
-$conn = new mysqli($host, $usuario, $password, $bd);
+    $contrasena_hash = password_hash($contrasena, PASSWORD_DEFAULT);
+    $rol_cliente = 1; // Cliente
 
-if ($conn->connect_error) {
-    echo json_encode(["success" => false, "error" => $conn->connect_error]);
-    exit();
-}
+    $sql = "INSERT INTO Usuarios (nombre, correo, contraseña, telefono, id_rol)
+            VALUES (?, ?, ?, ?, ?)";
 
-$sql = "SELECT 
-    u.nombre, 
-    u.correo, 
-    u.contraseña AS password, 
-    r.nombre_rol AS rol
-FROM 
-    usuarios u
-LEFT JOIN 
-    roles r ON u.id_rol = r.id_rol";
-$resultado = $conn->query($sql);
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ssssi", $nombre, $correo, $contrasena_hash, $telefono, $rol_cliente);
 
-$usuarios = [];
-
-if ($resultado && $resultado->num_rows > 0) {
-    while ($fila = $resultado->fetch_assoc()) {
-        $usuarios[] = $fila;
+    if ($stmt->execute()) {
+        echo "<script>alert('Registro exitoso.'); window.location.href='../index.html';</script>";
+    } else {
+        echo "<script>alert('Error al registrar: " . $stmt->error . "'); window.history.back();</script>";
     }
+
+    $stmt->close();
+    $conn->close();
 }
-
-echo json_encode(["success" => true, "usuarios" => $usuarios]);
-
-$conn->close();
 ?>
+
