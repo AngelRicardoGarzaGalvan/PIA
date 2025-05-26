@@ -29,4 +29,23 @@ function cerrarSesion() {
   localStorage.removeItem(USUARIO_ACTUAL_KEY);
 }
 
-crearUsuariosPrueba();
+// crearUsuariosPrueba();
+async function cargarUsuariosDesdeBD() {
+  try {
+    const response = await fetch('php/usuarios.php');
+    const data = await response.json();
+
+    if (data.success) {
+      localStorage.setItem(USUARIOS_KEY, JSON.stringify(data.usuarios));
+      return data.usuarios;
+    } else {
+      console.error('No se pudieron obtener los usuarios');
+      return [];
+    }
+  } catch (error) {
+    console.error('Error en la petición:', error);
+    return [];
+  }
+}
+
+cargarUsuariosDesdeBD();
