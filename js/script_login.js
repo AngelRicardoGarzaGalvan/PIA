@@ -18,7 +18,7 @@ document.querySelector(".submit-btn").addEventListener("click", function () {
 
   localStorage.setItem("usuario_actual", JSON.stringify(usuario));
 
-  switch (usuario.rol) {
+  switch (usuario.rol){
     case "cliente":
       location.href = "cliente/principal.html";
       break;
