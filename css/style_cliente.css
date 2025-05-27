@@ -126,3 +126,6 @@
   max-width: 250px; /* o el tamaño que necesites */
   height: auto;
 }
+.login-box2 .row {
+  align-items: flex-start;
+}
