@@ -9,6 +9,6 @@ if (!isset($_SESSION['usuario']) || $_SESSION['usuario']['id_rol'] != 2) {
 }
 
 // Redirige a la página HTML real
-header("Location: admin_comentarios.html");
+header("Location: ../crud_comentarios/comentarios.php");
 exit;
 ?>
