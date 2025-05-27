@@ -51,6 +51,9 @@
 #calendario{
     margin-top: 10px;
     font-family: Arial, sans-serif;
+    /* Fija altura y agrega scroll interno para evitar que toda la página se mueva */
+    max-height: 360px;
+    overflow-y: auto;
 }
 #calendario table{
     width: 100%;
@@ -67,7 +70,7 @@
     border-radius: 6px;
     font-size: 14px;
     cursor: pointer;
-    transition: 0.2s;
+    transition: background-color 0.2s;
 }
 
 #calendario td:hover {
@@ -84,6 +87,12 @@
     background-color: #ff6b6b;
     color: white;
     font-weight: bold;
+}
+
+/* Asegura que los días con clase .dia.ocupado se mantengan rojos */
+#calendario .dia.ocupado {
+    background-color: #ff6b6b !important;
+    color: #fff !important;
 }
 
 .hora-btn {
@@ -112,7 +121,7 @@
     cursor: not-allowed;
 }
 .dental{
-display: block;
+  display: block;
   margin: 0 auto;
   max-width: 250px; /* o el tamaño que necesites */
   height: auto;
