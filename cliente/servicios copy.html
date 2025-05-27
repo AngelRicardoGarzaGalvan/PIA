@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Consultorio Dental</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../css/style_cliente.css" />
+</head>
+<body>
+    <div class="top-bar">
+        <h1>Consultorio Dental</h1>
+        <p>Sonrisas saludables, cuidado profesional.</p>
+    </div>
+    <div class="nav-bar">
+        <button onclick="location.href='principal.html'">Principal</button>
+        <button onclick="location.href='nosotros.html'">Nosotros</button>
+        <button class="active" onclick="location.href='servicios.html'">Servicios</button>
+        <button onclick="location.href='citas.html'">Citas</button>
+        <button onclick="location.href='comentarios.html'">Comentarios</button>
+        <button onclick="location.href='contacto.html'">Contactanos</button>
+        <button onclick="cerrarSesion()">Cerrar sesión</button>
+    </div>
+    <div class="login-box2">
+        <div class="row">
+            <div class="col-text">
+                <h2>Servicios</h2>
+                <p>Ofrecemos una amplia gama de tratamientos para ayudarte a cuidar y mejorar tu sonrisa. Nuestro equipo profesional utiliza tecnología avanzada para garantizar comodidad y resultados efectivos.</p>
+                <ul class="cos">
+                    <li><strong>Limpieza y prevención:</strong> Revisiones periódicas, limpiezas profesionales y aplicación de flúor.</li>
+                    <li><strong>Odontología general:</strong> Caries, extracciones y alivio del dolor.</li>
+                    <li><strong>Ortodoncia:</strong> Brackets tradicionales, alineadores invisibles.</li>
+                    <li><strong>Estética dental:</strong> Blanqueamientos, carillas, remodelación.</li>
+                    <li><strong>Implantes y prótesis:</strong> Reposición de piezas dentales con resultados naturales.</li>
+                    <li><strong>Endodoncia:</strong> Tratamiento de conducto para dientes dañados.</li>
+                </ul>
+            </div>
+            <div class="col-img">
+                <img class="dental" src="../img/servicios.jpg" alt="Logo del consultorio" />
+            </div>
+        </div>
+    </div>
+    <div class="login-box2" style="margin-top: 30px;">
+        <div class="row">
+            <div class="col-text col-costos">
+                <h2>Costos</h2>
+                <ul class="cos" id="lista-costos">
+                    <li>Cargando costos desde la base de datos...</li>
+                </ul>
+            </div>
+            <div class="col-img">
+                <img class="dental" src="../img/costos.jpg" alt="Imagen de doctor ilustrativo" />
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/script_cliente.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch("../php/obtener_servicios.php")
+                .then(res => res.json())
+                .then(data => {
+                    const lista = document.getElementById("lista-costos");
+                    lista.innerHTML = ""; // Limpia el contenido de "Cargando..."
+
+                    if (data.length === 0) {
+                        lista.innerHTML = "<li>No hay servicios registrados.</li>";
+                        return;
+                    }
+
+                    data.forEach(servicio => {
+                        const item = document.createElement("li");
+                        item.textContent = `${servicio.nombre}: $${parseFloat(servicio.costo).toFixed(2)}`;
+                        lista.appendChild(item);
+                    });
+                })
+                .catch(err => {
+                    const lista = document.getElementById("lista-costos");
+                    lista.innerHTML = "<li>Error al cargar los servicios.</li>";
+                    console.error("Error al obtener servicios:", err);
+                });
+        });
+    </script>
+</body>
+</html>
