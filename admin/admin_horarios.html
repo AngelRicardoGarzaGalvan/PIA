@@ -26,33 +26,39 @@
   <div class="admin-container admin-horarios-container">
     <h2>Gestión de Horarios y Días</h2>
 
-    <div class="horario-calendario-wrapper">
-      <!-- Columna de horarios generales -->
-      <div class="horarios">
-        <ul id="lista-horarios"></ul>
-        <div class="nuevo-horario">
-          <input type="text" id="input-nuevo-horario" placeholder="Ej: 6:00am a 8:00am" />
-          <button onclick="agregarHorario()">Añadir</button>
-        </div>
-      </div>
+    <!-- NUEVA SECCIÓN: Asignar disponibilidad a doctores -->
+<div class="form-doctor-disponibilidad">
+  <h3>Asignar disponibilidad a un doctor</h3>
+  
+  <label for="doctor-select">Seleccionar Doctor:</label>
+  <select id="doctor-select">
+    <option value="">-- Selecciona un doctor --</option>
+  </select>
 
-      <!-- Calendario -->
-      <div class="calendario">
-        <h3>Calendario</h3>
-        <div id="calendario-dias"></div>
-        <button onclick="guardarCambios()">Guardar Cambios</button>
-      </div>
-    </div>
-  </div>
+  <label for="dia-select">Día de la Semana:</label>
+  <select id="dia-select">
+    <option value="">-- Selecciona un día --</option>
+    <option value="1">Lunes</option>
+    <option value="2">Martes</option>
+    <option value="3">Miércoles</option>
+    <option value="4">Jueves</option>
+    <option value="5">Viernes</option>
+    <option value="6">Sábado</option>
+    <option value="7">Domingo</option>
+  </select>
 
-  <!-- Panel lateral para editar horarios por día -->
-  <div id="editor-dia" class="panel-editor hidden">
-    <h3>Editar horarios para el <span id="fecha-editando"></span></h3>
-    <div id="horarios-checks"></div>
-    <button onclick="guardarHorariosDelDia()">Guardar horarios</button>
-  </div>
+  <label for="hora-inicio">Hora de Inicio:</label>
+  <input type="time" id="hora-inicio" required>
+
+  <label for="hora-fin">Hora de Fin:</label>
+  <input type="time" id="hora-fin" required>
+
+  <button onclick="guardarHorarioDisponible()">Guardar Disponibilidad</button>
+</div>
+
+
 
   <script src="../js/script_admin.js"></script>
-  <script src="../js/script_admin_horarios.js"></script>
+<script src="../js/script_admin_horarios.js?v=4"></script>
 </body>
 </html>
