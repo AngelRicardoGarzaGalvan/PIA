@@ -1,28 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Consultorio Dental</title>
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="../css/style_admin.css">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../css/style_admin.css" />
+    <style>
+      /* Simple estilos para tabla y edición */
+      table {
+        border-collapse: collapse;
+        width: 80%;
+        margin: 20px auto;
+      }
+      th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      td.editable {
+        cursor: pointer;
+        background-color: #fafafa;
+      }
+      input.inline-edit {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 6px;
+      }
+      .msg {
+        width: 80%;
+        margin: 10px auto;
+        text-align: center;
+        font-weight: bold;
+      }
+    </style>
 </head>
 <body>
-    <div class="top-bar">
+  <div class="top-bar">
     <h1>Consultorio Dental</h1>
     <p>Modo Servicios</p>
-    </div>
+  </div>
 
-    <div class="nav-bar">
+  <div class="nav-bar">
     <button onclick="location.href='../crud_comentarios/comentarios.php'">Administrador de Comentarios</button>
     <button onclick="location.href='admin_horarios.html'">Horarios y Días</button>
     <button onclick="location.href='admin_roles.html'">Asignamiento de Rol</button>
     <button onclick="location.href='admin_estadisticas.html'">Estadísticas</button>
     <button class="active" onclick="location.href='admin_servicios.html'">Servicios</button>
     <button onclick="cerrarSesion()">Cerrar sesión</button>
-    </div>
+  </div>
 
+  <h2 style="text-align:center;">Lista de Servicios - Modificar Precio</h2>
 
-    <script src="../js/script_admin.js"></script>
+  <div class="msg" id="msg"></div>
+
+  <table id="tablaServicios" align="center">
+    <thead>
+      <tr>
+        <th>Servicio</th>
+        <th>Precio ($)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Se llenará dinámicamente -->
+    </tbody>
+  </table>
+
+  <script>
+    const tablaBody = document.querySelector('#tablaServicios tbody');
+    const msgDiv = document.getElementById('msg');
+
+    // Cargar servicios desde PHP
+    async function cargarServicios() {
+      try {
+        const res = await fetch('../php/obtener_servicios.php');
+        const servicios = await res.json();
+        tablaBody.innerHTML = '';
+
+        servicios.forEach(servicio => {
+          const tr = document.createElement('tr');
+
+          // Nombre servicio
+          const tdNombre = document.createElement('td');
+          tdNombre.textContent = servicio.nombre;
+
+          // Precio editable
+          const tdPrecio = document.createElement('td');
+          tdPrecio.classList.add('editable');
+          tdPrecio.textContent = parseFloat(servicio.costo).toFixed(2);
+          console.log(servicio);
+          tdPrecio.dataset.id = servicio.id_servicio;
+
+          // Al hacer click en el precio, cambiar a input
+          tdPrecio.addEventListener('click', () => {
+            if (tdPrecio.querySelector('input')) return; // Ya en edición
+
+            const input = document.createElement('input');
+            input.type = 'number';
+            input.step = '0.01';
+            input.min = '0';
+            input.className = 'inline-edit';
+            input.value = tdPrecio.textContent;
+            tdPrecio.textContent = '';
+            tdPrecio.appendChild(input);
+            input.focus();
+
+            // Cuando el input pierde foco, guardar cambio
+            input.addEventListener('blur', () => {
+              const nuevoPrecio = parseFloat(input.value);
+              if (isNaN(nuevoPrecio) || nuevoPrecio < 0) {
+                alert('Introduce un precio válido.');
+                tdPrecio.textContent = parseFloat(servicio.costo).toFixed(2);
+                return;
+              }
+              if (nuevoPrecio.toFixed(2) === parseFloat(servicio.costo).toFixed(2)) {
+                // No cambió nada
+                tdPrecio.textContent = parseFloat(servicio.costo).toFixed(2);
+                return;
+              }
+              // Guardar cambio
+              actualizarPrecio(servicio.id_servicio, nuevoPrecio, tdPrecio);
+            });
+
+            // Enter para guardar
+            input.addEventListener('keydown', (e) => {
+              if (e.key === 'Enter') {
+                input.blur();
+              } else if (e.key === 'Escape') {
+                tdPrecio.textContent = parseFloat(servicio.costo).toFixed(2);
+              }
+            });
+          });
+
+          tr.appendChild(tdNombre);
+          tr.appendChild(tdPrecio);
+          tablaBody.appendChild(tr);
+        });
+      } catch (e) {
+        msgDiv.textContent = 'Error al cargar servicios.';
+        console.error(e);
+      }
+    }
+
+    // Actualizar precio en BD
+    async function actualizarPrecio(id, precio, tdPrecio) {
+        console.log(id);
+        console.log(precio);
+        console.log(tdPrecio);
+
+      try {
+        const data = new URLSearchParams();
+        data.append('id_servicio', id);
+        data.append('costo', precio);
+
+        const res = await fetch('../php/actualizar_precio_servicio.php', {
+          method: 'POST',
+          body: data,
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          }
+        });
+        const result = await res.json();
+
+        if (result.success) {
+          msgDiv.textContent = 'Precio actualizado correctamente.';
+          tdPrecio.textContent = precio.toFixed(2);
+          // Actualizar también en el arreglo local, para evitar desincronía si vuelves a editar
+          // (opcional si tienes un array global)
+        } else {
+          msgDiv.textContent = 'Error al actualizar precio: ' + result.error;
+          tdPrecio.textContent = 'Error';
+        }
+      } catch (e) {
+        msgDiv.textContent = 'Error de conexión al actualizar precio.';
+        tdPrecio.textContent = 'Error';
+        console.error(e);
+      }
+      // Borrar mensaje después de 3 seg
+      setTimeout(() => { msgDiv.textContent = ''; }, 3000);
+    }
+
+    // Al cargar la página
+    document.addEventListener('DOMContentLoaded', cargarServicios);
+
+    // Función ficticia para cerrar sesión
+    function cerrarSesion() {
+      alert('Sesión cerrada');
+      // Aquí redirigir o hacer logout
+    }
+  </script>
 </body>
 </html>
